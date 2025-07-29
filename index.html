@@ -34,23 +34,37 @@
   </div>
 
   <script>
-    function defaultImage() {
-      document.getElementById('kitten').src = "kitten-default.png";
-    }
+  function defaultImage() {
+    document.getElementById('kitten').src = "kitten-default.png";
+  }
 
-    function hoverImage() {
-      document.getElementById('kitten').src = "kitten-hover.png";
-    }
+  function hoverImage() {
+    document.getElementById('kitten').src = "kitten-hover.png";
+  }
 
-    function clickedImage() {
-      document.getElementById('kitten').src = "kitten-clicked.png";
-    }
+  function clickedImage() {
+    document.getElementById('kitten').src = "kitten-clicked.png";
+  }
 
-    function selectYes(box) {
-      document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
-      box.checked = true;
-      document.getElementById("response").innerText = "Yay! 😺";
-    }
-  </script>
+  function selectYes(box) {
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+    box.checked = true;
+    document.getElementById("response").innerText = "Yay! 😺";
+
+    // 🎉 Confetti effect
+    confetti({
+      particleCount: 150,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+    const sound = document.getElementById("yay-sound");
+    sound.currentTime = 0; // rewind to start
+    sound.play();
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<audio id="yay-sound" src="yay.mp3" preload="auto"></audio>
+
+
 </body>
 </html>
