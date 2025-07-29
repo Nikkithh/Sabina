@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dragut Sabina</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Draga Dragut Sabina doriti sa planuim in viitorul apropiat o aventura nocturna in care sa mergem sa ne uitam la cerul instelat impreuna ascultand muzica buna si vorbind despre nemurirea sufletului?</h1>
+
+    <div class="options">
+      <label 
+        onmouseenter="hoverImage()" 
+        onmouseleave="defaultImage()" 
+        onclick="clickedImage()"
+      >
+        <input type="checkbox" onclick="selectYes(this)"> yes
+      </label>
+
+      <img id="kitten" src="kitten-default.png" alt="Cute kitten">
+
+      <label 
+        onmouseenter="hoverImage()" 
+        onmouseleave="defaultImage()" 
+        onclick="clickedImage()"
+      >
+        <input type="checkbox" onclick="selectYes(this)"> yes
+      </label>
+    </div>
+
+    <p id="response"></p>
+  </div>
+
+  <script>
+    function defaultImage() {
+      document.getElementById('kitten').src = "kitten-default.png";
+    }
+
+    function hoverImage() {
+      document.getElementById('kitten').src = "kitten-hover.png";
+    }
+
+    function clickedImage() {
+      document.getElementById('kitten').src = "kitten-clicked.png";
+    }
+
+    function selectYes(box) {
+      document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+      box.checked = true;
+      document.getElementById("response").innerText = "Yay! 😺";
+    }
+  </script>
+</body>
+</html>

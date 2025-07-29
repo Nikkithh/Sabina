@@ -1,0 +1,78 @@
+@font-face {
+  font-family: 'ChildsHandwriting';
+  src: url('fonts/Childs-Handwriting.ttf.eot'); /* For IE */
+  src: url('fonts/Childs-Handwriting.ttf.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Childs-Handwriting.ttf.woff') format('woff'),
+       url('fonts/Childs-Handwriting.ttf.svg#ChildsHandwriting') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: #fffbe7;
+  font-family: 'ChildsHandwriting', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 30px;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.options label {
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.options img {
+  width: 120px;
+  height: auto;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+#response {
+  margin-top: 20px;
+  font-size: 1.8em;
+  color: #555;
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .options {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .options img {
+    width: 100px;
+  }
+
+  .options label {
+    font-size: 1.5em;
+  }
+
+  #response {
+    font-size: 1.4em;
+  }
+}
